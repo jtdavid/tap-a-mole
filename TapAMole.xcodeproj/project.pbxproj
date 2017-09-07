@@ -13,6 +13,7 @@
 		1F1151221F61877500684B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1151201F61877500684B1F /* Main.storyboard */; };
 		1F1151241F61877500684B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1151231F61877500684B1F /* Assets.xcassets */; };
 		1F1151271F61877500684B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1151251F61877500684B1F /* LaunchScreen.storyboard */; };
+		1F379C501F61B4D4009A0275 /* Mole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F379C4F1F61B4D4009A0275 /* Mole.swift */; };
 		8ECB21A57925257506A95F8A /* Pods_TapAMole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2161F4E924B4C1CD6FAC1A4 /* Pods_TapAMole.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		1F1151231F61877500684B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F1151261F61877500684B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F1151281F61877500684B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F379C4F1F61B4D4009A0275 /* Mole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mole.swift; sourceTree = "<group>"; };
 		651EC2874609700290D2C4A5 /* Pods-TapAMole.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapAMole.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapAMole/Pods-TapAMole.release.xcconfig"; sourceTree = "<group>"; };
 		D2161F4E924B4C1CD6FAC1A4 /* Pods_TapAMole.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapAMole.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D641ED8A02696B3C156061A1 /* Pods-TapAMole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapAMole.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapAMole/Pods-TapAMole.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,11 +75,12 @@
 			children = (
 				1F11511A1F61877500684B1F /* AppDelegate.swift */,
 				1F11511C1F61877500684B1F /* art.scnassets */,
-				1F11511E1F61877500684B1F /* ViewController.swift */,
-				1F1151201F61877500684B1F /* Main.storyboard */,
 				1F1151231F61877500684B1F /* Assets.xcassets */,
-				1F1151251F61877500684B1F /* LaunchScreen.storyboard */,
 				1F1151281F61877500684B1F /* Info.plist */,
+				1F1151251F61877500684B1F /* LaunchScreen.storyboard */,
+				1F1151201F61877500684B1F /* Main.storyboard */,
+				1F379C4F1F61B4D4009A0275 /* Mole.swift */,
+				1F11511E1F61877500684B1F /* ViewController.swift */,
 			);
 			path = TapAMole;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F11511F1F61877500684B1F /* ViewController.swift in Sources */,
+				1F379C501F61B4D4009A0275 /* Mole.swift in Sources */,
 				1F11511B1F61877500684B1F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
