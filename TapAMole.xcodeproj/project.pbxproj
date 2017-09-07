@@ -13,6 +13,7 @@
 		1F1151221F61877500684B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1151201F61877500684B1F /* Main.storyboard */; };
 		1F1151241F61877500684B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1151231F61877500684B1F /* Assets.xcassets */; };
 		1F1151271F61877500684B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1151251F61877500684B1F /* LaunchScreen.storyboard */; };
+		8ECB21A57925257506A95F8A /* Pods_TapAMole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2161F4E924B4C1CD6FAC1A4 /* Pods_TapAMole.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		1F1151231F61877500684B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F1151261F61877500684B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F1151281F61877500684B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651EC2874609700290D2C4A5 /* Pods-TapAMole.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapAMole.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapAMole/Pods-TapAMole.release.xcconfig"; sourceTree = "<group>"; };
+		D2161F4E924B4C1CD6FAC1A4 /* Pods_TapAMole.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapAMole.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D641ED8A02696B3C156061A1 /* Pods-TapAMole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapAMole.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapAMole/Pods-TapAMole.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ECB21A57925257506A95F8A /* Pods_TapAMole.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046490B85D1BA5E4F7CFA7FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2161F4E924B4C1CD6FAC1A4 /* Pods_TapAMole.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1F11510E1F61877500684B1F = {
 			isa = PBXGroup;
 			children = (
 				1F1151191F61877500684B1F /* TapAMole */,
 				1F1151181F61877500684B1F /* Products */,
+				9A33FB6203F90F29D93E2A9C /* Pods */,
+				046490B85D1BA5E4F7CFA7FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = TapAMole;
 			sourceTree = "<group>";
 		};
+		9A33FB6203F90F29D93E2A9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D641ED8A02696B3C156061A1 /* Pods-TapAMole.debug.xcconfig */,
+				651EC2874609700290D2C4A5 /* Pods-TapAMole.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F11512B1F61877500684B1F /* Build configuration list for PBXNativeTarget "TapAMole" */;
 			buildPhases = (
+				95FCB6F75EF331DD22176879 /* [CP] Check Pods Manifest.lock */,
 				1F1151131F61877500684B1F /* Sources */,
 				1F1151141F61877500684B1F /* Frameworks */,
 				1F1151151F61877500684B1F /* Resources */,
+				DA3C71F652EEBA7F45BD2BA8 /* [CP] Embed Pods Frameworks */,
+				77DF91825DF14F40593ABCAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,6 +161,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77DF91825DF14F40593ABCAF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TapAMole/Pods-TapAMole-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95FCB6F75EF331DD22176879 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TapAMole-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA3C71F652EEBA7F45BD2BA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TapAMole/Pods-TapAMole-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F1151131F61877500684B1F /* Sources */ = {
@@ -276,6 +354,7 @@
 		};
 		1F11512C1F61877500684B1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D641ED8A02696B3C156061A1 /* Pods-TapAMole.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +370,7 @@
 		};
 		1F11512D1F61877500684B1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 651EC2874609700290D2C4A5 /* Pods-TapAMole.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
