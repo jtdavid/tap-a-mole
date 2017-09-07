@@ -12,11 +12,6 @@ import ARKit
 
 class ViewController: UIViewController {
 
-    fileprivate enum Constants {
-
-        static let boxWidth: CGFloat = 0.1
-    }
-
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
@@ -32,11 +27,6 @@ class ViewController: UIViewController {
 
         // Create a new scene
         let scene = SCNScene()
-        // create box
-//        let boxGeometry = SCNBox(width: Constants.boxWidth, height: Constants.boxWidth, length: Constants.boxWidth, chamferRadius: 0.0)
-//        let boxNode = SCNNode(geometry: boxGeometry)
-//        boxNode.position = SCNVector3Make(0.0, 0.0, -0.1)
-//        scene.rootNode.addChildNode(boxNode)
 
         // Set the scene to the view
         sceneView.scene = scene
@@ -80,18 +70,9 @@ extension ViewController : ARSCNViewDelegate {
         }
         print("Anchor => \(anchor)")
 
-//        let planeGeometry = SCNPlane(width: CGFloat(anchor.extent.x), height: CGFloat(anchor.extent.z))
-//        let planeNode = SCNNode(geometry: planeGeometry)
-//        planeNode.position = SCNVector3Make(anchor.center.x, 0, anchor.center.z)
-//
-//        self.sceneView.scene.rootNode.addChildNode(node)
+        let boardNode = Board(with: anchor)
 
-
-        let planeGeometry = SCNPlane(width: CGFloat(anchor.extent.x), height: CGFloat(anchor.extent.z))
-        let planeNode = SCNNode(geometry: planeGeometry)
-        planeNode.position = SCNVector3Make(anchor.center.x, 0, anchor.center.z)
-        planeNode.transform = SCNMatrix4MakeRotation(Float(-Double.pi / 2), 1.0, 0.0, 0.0)
-        node.addChildNode(planeNode)
+        node.addChildNode(boardNode)
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -112,5 +93,40 @@ extension ViewController : ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
 
+    }
+}
+
+class Board: SCNNode {
+
+    var planeGeometry: SCNPlane?
+
+    fileprivate enum Constants {
+
+        static let boxWidth: CGFloat = 0.1
+    }
+
+    override init() {
+
+        super.init()
+    }
+
+    convenience init(with anchor: ARPlaneAnchor) {
+
+        let planeGeometry = SCNPlane(width: CGFloat(anchor.extent.x), height: CGFloat(anchor.extent.z))
+        self.init()
+        self.geometry = planeGeometry
+        self.position = SCNVector3Make(anchor.center.x, 0, anchor.center.z)
+        self.transform = SCNMatrix4MakeRotation(Float(-Double.pi / 2), 1.0, 0.0, 0.0)
+
+        // add a box on top
+        let boxGeometry = SCNBox(width: Constants.boxWidth, height: Constants.boxWidth, length: Constants.boxWidth, chamferRadius: 0.2)
+        let boxNode = SCNNode(geometry: boxGeometry)
+        boxNode.position = SCNVector3Make(0.0, 0.0, 0.1)
+
+        self.addChildNode(boxNode)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
