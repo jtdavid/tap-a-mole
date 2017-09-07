@@ -12,6 +12,11 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    fileprivate enum Constants {
+
+        static let boxWidth: CGFloat = 0.1
+    }
+
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
@@ -22,9 +27,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        
+
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
+
+        // create box
+        let boxGeometry = SCNBox(width: Constants.boxWidth, height: Constants.boxWidth, length: Constants.boxWidth, chamferRadius: 0.0)
+        let boxNode = SCNNode(geometry: boxGeometry)
+        boxNode.position = SCNVector3Make(0.0, 0.0, -0.1)
+        scene.rootNode.addChildNode(boxNode)
         
         // Set the scene to the view
         sceneView.scene = scene
